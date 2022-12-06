@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.2.0"
+  api:
+    dependency: transitive
+    description:
+      path: "packages/api"
+      relative: true
+    source: path
+    version: "0.0.1"
   app:
     dependency: "direct main"
     description:
@@ -269,7 +276,7 @@ packages:
     source: hosted
     version: "3.2.0"
   get_it:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: get_it
       url: "https://pub.dartlang.org"

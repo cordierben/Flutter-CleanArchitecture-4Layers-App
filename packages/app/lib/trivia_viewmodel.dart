@@ -1,8 +1,9 @@
-import 'package:domain/models/data_response.dart';
-import 'package:domain/models/number_trivia.dart';
-import 'package:domain/usecases/get_concrete_number_trivia_usecase.dart';
-import 'package:domain/usecases/get_random_number_trivia_usecase.dart';
+import 'package:api/get_concrete_number_trivia_usecase.dart';
+import 'package:api/get_random_number_trivia_usecase.dart';
+import 'package:api/models/data_response.dart';
+import 'package:api/models/number_trivia.dart';
 import 'package:mobx/mobx.dart';
+
 part 'trivia_viewmodel.g.dart';
 
 class TriviaViewModel = _TriviaViewModel with _$TriviaViewModel;

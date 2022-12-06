@@ -1,17 +1,10 @@
 import 'dart:convert';
-
-import 'package:data/models/number_trivia_model.dart';
-import 'package:domain/models/exceptions.dart';
+import 'package:api/models/exceptions.dart';
+import 'package:api/models/number_trivia_model.dart';
+import 'package:api/number_trivia_remote_datasource.dart';
 import 'package:dio/dio.dart';
 
-abstract class NumberTriviaRemoteDatasource{
 
-  ///Calls the http://numbersapi.com/{number}
-  Future<NumberTriviaModel> getConcreteNumberTrivia(int number) ;
-
-  ///Calls the http://numbersapi.com/random
-  Future<NumberTriviaModel> getRandomNumberTrivia() ;
-}
 
 class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDatasource {
 

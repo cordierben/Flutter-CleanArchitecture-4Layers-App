@@ -1,4 +1,4 @@
-import 'package:app/injection_container.dart' as di;
+import 'package:api/injection_container.dart' as di;
 import 'package:app/main.dart';
 import 'package:flutter/material.dart';
 

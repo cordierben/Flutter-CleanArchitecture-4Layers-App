@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   equatable: ^2.0.0
+  api:
+    path: ../api
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,5 @@
-import 'package:domain/models/failures.dart';
-import 'package:domain/models/number_trivia.dart';
+import 'failures.dart';
+import 'number_trivia.dart';
 
 class DataResponse{
   NumberTrivia numberTrivia = NumberTrivia(text: "none", number: -1);

@@ -1,10 +1,9 @@
-import 'package:app/injection_container.dart';
+import 'package:api/injection_container.dart';
 import 'package:app/trivia_viewmodel.dart';
-import 'package:domain/usecases/get_concrete_number_trivia_usecase.dart';
-import 'package:domain/usecases/get_random_number_trivia_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-
+import 'package:api/get_concrete_number_trivia_usecase.dart';
+import 'package:api/get_random_number_trivia_usecase.dart';
 
 final triviaViewModel = TriviaViewModel(
     locator<GetRandomNumberTriviaUseCase>(),

@@ -1,6 +1,6 @@
-import 'package:domain/models/data_response.dart';
-import 'package:domain/models/number_trivia.dart';
-import 'package:domain/repositories/number_trivia_repository.dart';
+import 'package:api/models/data_response.dart';
+import 'package:api/models/number_trivia.dart';
+import 'package:api/number_trivia_repository.dart';
 import 'package:domain/usecases/get_concrete_number_trivia_usecase_impl.dart';
 import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';

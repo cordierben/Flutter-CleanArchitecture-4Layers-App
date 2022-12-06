@@ -1,10 +1,10 @@
-import 'package:data/datasources/number_trivia_local_datasource.dart';
-import 'package:data/datasources/number_trivia_remote_datasource.dart';
-import 'package:data/models/number_trivia_model.dart';
+import 'package:api/number_trivia_local_datasource.dart';
+import 'package:api/number_trivia_remote_datasource.dart';
+import 'package:api/models/number_trivia_model.dart';
 import 'package:data/utils/network_info.dart';
-import 'package:domain/models/data_response.dart';
-import 'package:domain/models/failures.dart';
-import 'package:domain/repositories/number_trivia_repository.dart';
+import 'package:api/models/data_response.dart';
+import 'package:api/number_trivia_repository.dart';
+import 'package:api/models/failures.dart';
 
 typedef Future<NumberTriviaModel> _concreteOrRandomChooser();
 

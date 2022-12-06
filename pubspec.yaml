@@ -32,7 +32,6 @@ dependencies:
   flutter:
     sdk: flutter
   dartz: ^0.8.6
-  get_it: ^2.0.1
   build_runner: ^2.2.1
   app:
     path: ./packages/app

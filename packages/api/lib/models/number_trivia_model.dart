@@ -1,4 +1,4 @@
-import 'package:domain/models/number_trivia.dart';
+import 'package:api/models/number_trivia.dart';
 
 class NumberTriviaModel extends NumberTrivia{
 

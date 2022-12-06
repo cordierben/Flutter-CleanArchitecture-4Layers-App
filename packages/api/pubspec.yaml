@@ -10,6 +10,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  app:
+    path: ../app
+  domain:
+    path: ../domain
+  data:
+    path: ../data
+  get_it: ^2.0.1
+  data_connection_checker: ^0.3.4
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:data/models/number_trivia_model.dart';
-import 'package:domain/models/number_trivia.dart';
+import 'package:api/models/number_trivia.dart';
+import 'package:api/models/number_trivia_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../utils/json_reader.dart';
 

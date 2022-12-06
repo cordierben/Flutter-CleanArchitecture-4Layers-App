@@ -1,6 +1,6 @@
-import 'package:domain/models/data_response.dart';
-import 'package:domain/repositories/number_trivia_repository.dart';
-import 'package:domain/usecases/get_random_number_trivia_usecase.dart';
+import 'package:api/get_random_number_trivia_usecase.dart';
+import 'package:api/models/data_response.dart';
+import 'package:api/number_trivia_repository.dart';
 
 class GetRandomNumberTriviaUseCaseImpl implements GetRandomNumberTriviaUseCase{
   
