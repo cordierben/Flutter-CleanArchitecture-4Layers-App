@@ -17,6 +17,3 @@ Therefore, each layer has a dependency on "api" layer, and "api" layer knows eve
 - SharedPreferences
 - Api calls using Dio
 - Various packages for every layer
-
-
-

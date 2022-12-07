@@ -1,14 +1,13 @@
 import 'package:api/injection_container.dart';
+import 'package:app/trivia_result.dart';
 import 'package:app/trivia_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:api/get_concrete_number_trivia_usecase.dart';
 import 'package:api/get_random_number_trivia_usecase.dart';
 
-final triviaViewModel = TriviaViewModel(
-    locator<GetRandomNumberTriviaUseCase>(),
-    locator<GetConcreteNumberTriviaUseCase>()
-);
+final triviaViewModel = TriviaViewModel(locator<GetRandomNumberTriviaUseCase>(),
+    locator<GetConcreteNumberTriviaUseCase>());
 
 class TriviaView extends StatefulWidget {
   const TriviaView({super.key});
@@ -28,11 +27,12 @@ class _TriviaViewState extends State<TriviaView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextField(
+      resizeToAvoidBottomInset: false, // set it to false
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 70.0, left: 50.0, right: 50.0),
+            child: TextField(
               controller: controller,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
@@ -46,34 +46,43 @@ class _TriviaViewState extends State<TriviaView> {
                 dispatchConcrete();
               },
             ),
-            const SizedBox(height: 10),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: dispatchConcrete,
-                    child: const Text('Search'),
-                  ),
+          ),
+          const SizedBox(height: 10),
+          Padding(
+              padding: const EdgeInsets.only(bottom: 70),
+              child: ElevatedButton(
+                onPressed: dispatchConcrete,
+                child: const Text('Search'),
+              )),
+          // Wrapping in the Observer will automatically re-render on changes to counter.value
+          Expanded(
+              child: Container(
+            decoration: const BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20))),
+            child: Column(
+              children: [
+                const Padding(
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: Text('The number is:',
+                        style: TextStyle(fontSize: 25, color: Colors.white))),
+                Observer(
+                  builder: (_) => Text(
+                      '${triviaViewModel.data.numberTrivia.number}',
+                      style: const TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
                 ),
-                const SizedBox(width: 10),
+                Observer(
+                    builder: (_) => TriviaResult(
+                        text: triviaViewModel.data.numberTrivia.text)),
               ],
             ),
-            const Text('The number is:',),
-            // Wrapping in the Observer will automatically re-render on changes to counter.value
-            Observer(
-              builder: (_) => Text(
-                    '${triviaViewModel.data.numberTrivia.number}',
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-            ),
-            Observer(
-              builder: (_) => Text(
-                    'Anecdote : ${triviaViewModel.data.numberTrivia.text}',
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-            ),
-          ],
-        ),
+          ))
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: triviaViewModel.random,
@@ -87,6 +96,4 @@ class _TriviaViewState extends State<TriviaView> {
     controller.clear();
     triviaViewModel.getNumber(int.parse(inputStr));
   }
-
 }
-
